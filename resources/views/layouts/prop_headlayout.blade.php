@@ -39,6 +39,9 @@
         <ul class="navbar-nav ms-auto">
         @guest
         @else
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{{ route('home')}}">Dashboard</a>
+        </li>
         <li class="nav-item dropdown">
           <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
               {{ Auth::user()->name }}

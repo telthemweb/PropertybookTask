@@ -20,8 +20,8 @@ use App\Models\Package;
 */
 
 Route::get('/', function () {
-    $postbanner=Post::wheretype("BANNER")->first();
-    $poststory=Post::wheretype("OURSTORY")->first();
+    $postbanner=Post::wheretype("BANNER")->orderBy('created_at', 'desc')->first();
+    $poststory=Post::wheretype("OURSTORY")->orderBy('created_at', 'desc')->first();
     $products=Product::all();
     $pricings=Package::all();
     return view('welcome',compact('postbanner','poststory','products','pricings'));
